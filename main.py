@@ -164,6 +164,7 @@ def bot_message(message):
               i=0
               while i < len(sub):
                   top_headlines = newsapi.get_top_headlines(category=f'{sub[i][3]}', language='ru', country='ru', page=1,page_size=1)
+                  print(top_headlines)
                   bot.send_message(message.chat.id,f'Категория:{sub[i][3]}\nЗаголовок: {top_headlines["articles"][0]["title"]}\n {top_headlines["articles"][0]["url"]}')
                   i = i + 1
 
